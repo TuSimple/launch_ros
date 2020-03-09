@@ -34,6 +34,7 @@ from launch.utilities import perform_substitutions
 from .composable_node_container import ComposableNodeContainer
 
 from ..descriptions import ComposableNode
+from ..ros_adapters import get_ros_node
 from ..utilities import evaluate_parameters
 from ..utilities import to_parameters_list
 
@@ -183,7 +184,7 @@ class LoadComposableNodes(Action):
             return
 
         # Create a client to load nodes in the target container.
-        self.__rclpy_load_node_client = context.locals.launch_ros_node.create_client(
+        self.__rclpy_load_node_client = get_ros_node(context).create_client(
             composition_interfaces.srv.LoadNode, '{}/_container/load_node'.format(
                 self.__final_target_container_name
             )
