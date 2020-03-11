@@ -25,7 +25,7 @@ from ros2launch.api import print_a_launch_file
 from ros2launch.api import print_arguments_of_launch_file
 from ros2pkg.api import package_name_completer
 
-
+'''
 class LaunchCommand(CommandExtension):
     """Run a launch file."""
 
@@ -115,3 +115,4 @@ class LaunchCommand(CommandExtension):
                 launch_file_arguments=launch_arguments,
                 debug=args.debug
             )
+'''
